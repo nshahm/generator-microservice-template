@@ -1,14 +1,12 @@
 import * as express from "express";
 import * as BodyParser from "body-parser";
 import * as CookieParser from "cookie-parser";
-// import { mongodb} from "./Testing";
+
 import { getInstance } from "../src/inversify.config";
 import { IAPI } from "../src/api/IAPI";
-// import "./config/Mongodb";
 
 let app: any = express(),
     api: IAPI = getInstance<IAPI>("IAPI");
-  
 
 /** App Middlewares */
 app.use(function (req, res, next) {
@@ -26,3 +24,4 @@ app.listen(port);
 console.log("Testcase API Server listening on port " + port);
 
 export {app };
+

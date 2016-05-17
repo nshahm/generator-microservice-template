@@ -2,8 +2,8 @@ import * as Express from "express";
 import { I<%= microserviceName %>API } from "./I<%= microserviceName %>API";
 import {IAPI} from "./IAPI";
 import { inject, injectable } from "inversify";
- import pkg = require("./package.json");
- 
+import { Constants } from "../helpers/constants/Constants";
+
 const app: Express.Express = Express();
 /**
  * @class
@@ -18,7 +18,7 @@ class API implements IAPI {
     }
 
     public routes() {
-        app.use("/v1/<%= microserviceNameLC %>/", this.<%= microserviceNameLC %>API.routes());
+        app.use("/" + Constants.API_VERSION + "/<%= microserviceNameLC %>/", this.<%= microserviceNameLC %>API.routes());
         return app;
     }
 }

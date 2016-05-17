@@ -75,34 +75,7 @@ var BaseGenerator = generators.Base.extend({
             }
         );
     },
-    
-//     generatePackageJson : function () {
-       
-//         var updatedJson = {
-//             name : microserviceNameLC + "-microservice",
-//             description : description,
-//             author :  {
-//                 name : developerName,
-//                 email : developerEmail
-//             }
-//         };
-        
-//         var json = JSON.parse(fs.readFileSync(this.templatePath('package.json'), 'utf-8'));
-// //        console.log(json);
-               
-//         var outputFilename = this.destinationPath('package.json');       
-//         fs.writeFile(outputFilename, JSON.stringify(json, null, 4), function(err) {
-//             if(err) {
-//                 console.log(err);
-//             } else {
-                
-//                 jsonUpdate.update(outputFilename,updatedJson)
-//                      .then(function(dat) { 
-//                          //console.log(dat);
-//                 });
-//             }
-//         });  
-//     }
+
     
 });
 

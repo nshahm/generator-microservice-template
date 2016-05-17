@@ -5,6 +5,7 @@ import  {
  } from "../Testing";
 import * as supertest from "supertest";
 
+import { Constants } from "../../src/helpers/constants/Constants";
 import {I<%= microserviceName %>Model} from "entity-<%= microserviceNameLC %>";
 import { I<%= microserviceName %>DAO } from  "../../src/dal/dao/I<%= microserviceName %>DAO";
 import { app } from "../TestApp";
@@ -15,16 +16,30 @@ describe("<%= microserviceName %> API and service layer spec", function () {
 
    // Create payload
    const payload: I<%= microserviceName %>Model = <I<%= microserviceName %>Model> {
-        "entityVersion": "1.0.0"
-       
+        "entityVersion": "1.0.0",
+        "<%= microserviceNameLC %>ID": "1000002",
+        "name": {
+            "first": "Richard",
+            "last": "Patrick",
+        },
+        "address": {
+            "lines": [
+                "1234 Delk RD SW",
+            ],
+            "city": "Atlanta",
+            "state": "GA",
+            "zip": 12345,
+        },
     };
 
     // Update payload
     const updatePayload: I<%= microserviceName %>Model = <I<%= microserviceName %>Model>  {
-       
+        name : {
+             first: "John William",
+             last : "Patrick",
+        },
     };
 
-    // let <%= microserviceNameLC %>DAO: I<%= microserviceName %>DAO<I<%= microserviceName %>Model>;
    let <%= microserviceNameLC %>DAOMock: Sinon.SinonMock;
     let <%= microserviceNameLC %>DAO: I<%= microserviceName %>DAO<I<%= microserviceName %>Model>;
 
@@ -81,8 +96,9 @@ describe("<%= microserviceName %> API and service layer spec", function () {
                 "message": "Created successfully",
                 });
 
+        const url = "/" + Constants.API_VERSION + "/<%= microserviceNameLC %>/";
         request
-            .post("/v1/<%= microserviceNameLC %>")
+            .post(url)
             .send(payload)
             .expect(200)
             .expect("Content-Type", /json/)
@@ -105,8 +121,9 @@ describe("<%= microserviceName %> API and service layer spec", function () {
             .withArgs("id")
             .yields(null, { message: [  {"response": "responsedata"} ], status : "Success"});
 
+        const url = "/" + Constants.API_VERSION + "/<%= microserviceNameLC %>/id";
         request
-            .get("/v1/<%= microserviceNameLC %>/id")
+            .get(url)
             .send({id: "data"})
             .expect(200)
             .expect("Content-Type", /json/)
@@ -128,8 +145,9 @@ describe("<%= microserviceName %> API and service layer spec", function () {
             .expects("retrieve")
             .yields(null, { message: [  {"response": "responsedata"} ], status : "Success"});
 
+        const url = "/" + Constants.API_VERSION + "/<%= microserviceNameLC %>";
         request
-            .get("/v1/<%= microserviceNameLC %>")
+            .get(url)
             .expect(200)
             .expect("Content-Type", /json/)
             .expect((res) => {
@@ -155,8 +173,9 @@ describe("<%= microserviceName %> API and service layer spec", function () {
                     "message": "Updated successfully",
                     });
 
+        const url = "/" + Constants.API_VERSION + "/<%= microserviceNameLC %>/57325119da8a8f5c299edb31";
         request
-            .put("/v1/<%= microserviceNameLC %>/57325119da8a8f5c299edb31")
+            .put(url)
             .send(updatePayload)
             .expect(200)
             .expect("Content-Type", /json/)
@@ -182,8 +201,9 @@ describe("<%= microserviceName %> API and service layer spec", function () {
                 "message": "Deleted successfully",
                 });
 
+        const url = "/" + Constants.API_VERSION + "/<%= microserviceNameLC %>/id";
         request
-            .delete("/v1/<%= microserviceNameLC %>/id")
+            .delete(url)
              .set("id", "57325119da8a8f5c299edb31")
             .send(updatePayload)
             .expect(200)

@@ -7,7 +7,9 @@ import "reflect-metadata";
 import { kernel, getInstance} from "../src/inversify.config";
 import { Mongodb } from "../src/helpers/Mongodb";
 
+
 const expect: Chai.ExpectStatic = chai.expect;
+// const assert: Chai.AssertStatic = chai.assert;
 
 /**
  * Chai configuraitonn
