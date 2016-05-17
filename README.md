@@ -1,4 +1,4 @@
-# generator-microservice-template [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-microservice-template
 > Micro Service Template
 
 ## Installation
@@ -25,7 +25,7 @@ yo microservice-template
 
 ## License
 
-MIT © [Arul Xavier Raj](index.js)
+MIT © 
 
 
 [npm-image]: https://badge.fury.io/js/generator-microservice-template.svg
