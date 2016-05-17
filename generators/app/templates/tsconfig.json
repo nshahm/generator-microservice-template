@@ -1,0 +1,37 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "declaration": true,   
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "preserveConstEnums": true,
+    "moduleResolution": "node",
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "ES5",
+    "pretty":true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+    //"sortOutput":true
+   // "outDir": "dist",
+    // "out":"app.js"
+    //"outFile":"dist/employee-microservice.js"
+  },
+
+ "exclude": [
+        "node_modules",
+        "dist",
+        "typings/browser",
+        "typings/browser.d.ts",
+        "coverage"
+  ]
+  // "files": [
+  //   "typings/index.d.ts",
+  //   "src",
+  //   "src/*.ts",
+  //   "test/**/*.ts"
+  // ]
+}
+
+

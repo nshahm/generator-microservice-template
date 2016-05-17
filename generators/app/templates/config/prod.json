@@ -1,0 +1,32 @@
+{
+
+    "mongodb":
+        {
+            "host": "prodmachine",
+            "port": 27017,
+            "dbName": "employees",
+            "user": "",
+            "pass": "",
+            "poolSize":"10"
+        },
+    "logger":
+        {
+            "dir": "/Users/carestream/app/microservice-nodejs-layers/",
+            "fileName": "microservice-employee.log",
+            "dbURL": "mongodb://localhost/employees",
+            "db": true,
+            "file": true,
+            "consoleLog": false
+        },
+
+    "mongodbtest": 
+        {
+            "host": "localhost",
+            "port": 27017,
+            "dbName": "employees",
+            "user": "",
+            "pass": "",
+            "poolSize":"10"
+        }
+}
+
