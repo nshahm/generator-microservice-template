@@ -10,20 +10,16 @@ module.exports = generators.Base.extend({
   constructor: function () {
     generators.Base.apply(this, arguments);
 
-  var data = this.options.name || this.args[0];
-  console.log('data = ' + data);
-  this.data = data;
-  //this.sourceRoot(path.resolve(__dirname, '..') + '/templates');
-  
-  var microserviceName = this.data.charAt(0).toUpperCase() + this.data.slice(1).toLowerCase();
-  this.microserviceName = microserviceName;     
-  // lowercase
-  var microserviceNameLC = microserviceName.toLowerCase();
-  this.microserviceNameLC = microserviceNameLC;
-  
-  console.log('mcName' + this.microserviceName);
-  console.log('mcLCName' + this.microserviceNameLC);
-
+    var data = this.options.name || this.args[0];
+    console.log('data = ' + data);
+    this.data = data;
+    //this.sourceRoot(path.resolve(__dirname, '..') + '/templates');
+    
+    var microserviceName = this.data.charAt(0).toUpperCase() + this.data.slice(1).toLowerCase();
+    this.microserviceName = microserviceName;     
+    // lowercase
+    var microserviceNameLC = microserviceName.toLowerCase();
+    this.microserviceNameLC = microserviceNameLC;
   },
 
   writing : function () {

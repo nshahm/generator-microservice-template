@@ -13,17 +13,9 @@ var BaseGenerator = generators.Base.extend({
     
     constructor:function() {
         generators.Base.apply(this, arguments);
-        
-        //this.argument('dest', {type:String});
-        
-        //this.argument('appName', {type:String, required : true});
-        //this.log("Application name : " + this.appname);
     },
     
     generateAllOthers : function() {
-
-        // this.generatePackageJson();
-         
          
          this.copyStaticConfigFiles('README.MD');
          this.copyStaticConfigFiles('tsconfig.json');
@@ -168,15 +160,6 @@ module.exports = BaseGenerator.extend({
         });
         
     },
-    
-     configuring : function() {
-        
-        //this.sourceRoot(path.resolve(__dirname, '..') + '/templates');
-        
-        // console.log('srcPath' + this.sourceRoot());
-        // console.log('srcPath' + this.templatePath());
-        
-     },
 
     writing: function () {  
         
